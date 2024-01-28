@@ -1,8 +1,9 @@
 import React from 'react'
 import Tile from './Tile'
 import '../App.css'
+import Strike from './Strike'
 
-const Board = ({ tiles, onTileClick, playerTurn}) => {
+const Board = ({ tiles, onTileClick, playerTurn,strikeClass }) => {
   return (
     <div className='grid grid-cols-3 grid-rows-3 cursor-pointer relative'>
       <Tile playerTurn={playerTurn}
@@ -50,6 +51,7 @@ const Board = ({ tiles, onTileClick, playerTurn}) => {
         value={tiles[8]}
         style=""
       />
+      <Strike strikeClass={strikeClass} />
     </div>
   )
 }
