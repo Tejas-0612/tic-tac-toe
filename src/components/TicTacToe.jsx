@@ -14,6 +14,7 @@ clickSound.volume = 0.5;
 
 const PLAYER_X = "X";
 const PLAYER_O = "O";
+
 function checkWinner(tiles,setStrikeClass,setGameState){
   for(const {combo,strikeClass} of winningCombinations){
     const titlevalue1=tiles[combo[0]];
@@ -25,14 +26,14 @@ function checkWinner(tiles,setStrikeClass,setGameState){
       titlevalue1 === titlevalue2 && 
       titlevalue1 === titlevalue3
     ){
-      setStrikeClass(strikeClass);
-      if(titlevalue1 === PLAYER_X){
+        setStrikeClass(strikeClass);
+        if(titlevalue1 === PLAYER_X){
         setGameState(GameState.playerXWins);
-      } else {
+        } else {
         setGameState(GameState.playerOWins);
+        }
+        return;  
       }
-    return;  
-    }
 
   }
 
@@ -61,11 +62,13 @@ const TicTacToe = () => {
     const newTiles=[...tiles];
     newTiles[index]=playerTurn;
     SetTiles(newTiles);
+
     if(playerTurn==PLAYER_X){
       setPlayerTurn(PLAYER_O);
     }else{
       setPlayerTurn(PLAYER_X);
     }
+
   };
 
   const handleReset=()=>{
@@ -89,14 +92,25 @@ const TicTacToe = () => {
     if(gameState!=GameState.inProgress){
       gameOverSound.play();
     }
-  },[gameState])
+  },[gameState]);
 
   return (
-    <div>
-    <h1 className='text-4xl pt-8 text-center font-bold text-white mb-4'> Tic Tac Toe </h1>
-    <Board playerTurn={playerTurn} tiles={tiles} onTileClick={handleTileClick} strikeClass={strikeClass}/>
+    <div className='text-white text-center'>
+    <h1 className='text-4xl pt-8 text-center font-semibold md:font-bold mb-4'> Tic Tac Toe </h1>
+
+    <Board 
+      playerTurn={playerTurn} 
+      tiles={tiles} 
+      onTileClick={handleTileClick} 
+      strikeClass={strikeClass}
+    />
+
     <Result gamestate={gameState} />
-    <PlayAgain gameState={gameState} onReset={handleReset} />
+
+    <PlayAgain 
+      gameState={gameState} 
+      onReset={handleReset} 
+    />
     </div>
   )
 }

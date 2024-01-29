@@ -6,11 +6,11 @@ import { GameState } from '../Helper';
 const Result=({gamestate})=>{
 console.log(gamestate)
   return (
-    gamestate !=3?<div className='text-center border-8 border-dotted border-blue-500 p-10 mt-16 text-lg'>
-    
-      <Result1 gameState={gamestate} />
-      
-     </div> :null
+    gamestate !=3 ? (
+      <div className='text-2xl font-semibold border-8 border-dotted border-blue-500 p-4 md:p-5 mt-8 md:mt-12'>
+        <Result1 gameState={gamestate} />
+      </div>
+    ) : null
    )
 }
 
