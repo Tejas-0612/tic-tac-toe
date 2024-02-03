@@ -40,7 +40,7 @@ function checkWinner(tiles,setStrikeClass,setGameState){
   const areAllTilesFilledIn=tiles.every((tile)=>tile!==null);
   if(areAllTilesFilledIn){
     setGameState(GameState.draw);
-  }
+  } 
 }
 
 const TicTacToe = () => {
@@ -96,7 +96,7 @@ const TicTacToe = () => {
 
   return (
     <div className='text-white text-center'>
-    <h1 className='text-4xl pt-8 text-center font-semibold md:font-bold mb-4'> Tic Tac Toe </h1>
+    <h1 className='text-4xl pt-8 text-center font-semibold md:font-bold mb-8'> Tic Tac Toe </h1>
 
     <Board 
       playerTurn={playerTurn} 

@@ -9,7 +9,7 @@ const PlayAgain = ({gameState,onReset}) => {
   return (
     <button 
         onClick={onReset}
-        className='mt-8 p-5 bg-[#0074a6] text-white w-[100%] text-xl'>
+        className='mt-8 p-5 bg-[#0074a6] text-white w-[100%] text-2xl font-semibold'>
         Play Again
     </button>
   );

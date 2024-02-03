@@ -10,7 +10,7 @@ const Tile = ({style,value,onClick,playerTurn}) => {
   return (
     <div 
       onClick={onClick} 
-      className={`text-2xl py-9 flex items-center justify-center text-current ${style} px-10 ${hoverclass}`}
+      className={`w-[100px] h-[100px] text-3xl py-9 flex items-center justify-center text-current ${style} px-10 ${hoverclass}`}
     >
       <p>{value}</p>
     </div>
