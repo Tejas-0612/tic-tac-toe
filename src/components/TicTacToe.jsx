@@ -3,8 +3,8 @@ import Board from "./Board";
 import { GameState, winningCombinations } from "../Helper";
 import Result from "./Result";
 import PlayAgain from "./PlayAgain";
-import TileClickSound from "../assets/TileMoveSound.Wav";
-import GameOverSound from "../assets/GameOverSound.Wav";
+import TileClickSound from "../sounds/TileMoveSound.wav";
+import GameOverSound from "../sounds/GameOverSound.Wav";
 
 const gameOverSound = new Audio(GameOverSound);
 gameOverSound.volume = 0.2;
